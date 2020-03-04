@@ -7,12 +7,14 @@ class User {
         });
     };
 
+    // EDIT USER //
     userEdit(id, userObj){
         return this.user
             .put(`/user/${id}`, {...userObj})
             .then(({data}) => data);
     };
 
+    // DELETE USER //
     userDelete(id){
         return this.user
             .delete(`/user/${id}`)

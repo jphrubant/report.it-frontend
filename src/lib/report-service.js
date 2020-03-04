@@ -7,30 +7,28 @@ class Report {
             });
     };
 
+    // GET ALL REPORTS //
     allReports(){
         return this.report
             .get('/report', {})
             .then(({data}) => data);
     };
-
-    userReports(id){
-        return this.report
-            .get(`/report/${id}`)
-            .then(({data}) => data);
-    };
-
+    
+    // CREATE A REPORT//
     createReport(reportObj){
         return this.report  
             .post('/report', {...reportObj})
             .then(({data}) => data);
     };
 
+    // UPDATE A REPORT //
     updateReport(id, reportObj){
         return this.report
             .put(`report/${id}`, {...reportObj})
             .then(({data}) => data);
     };
 
+    // DELETE A REPORT //
     deleteReport(id){
         return this.report
             .delete(`report/${id}`)
