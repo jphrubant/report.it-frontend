@@ -8,6 +8,7 @@ class Auth {
     });
   }
 
+  // CREATE A USER//
   signup({ email, password }) {
     return this.auth
       .post("/auth/signup", { email, password })
@@ -15,6 +16,7 @@ class Auth {
     // .then((response) => response.data);
   }
 
+  // LOG USER IN//
   login({ email, password }) {
     return this.auth
       .post("/auth/login", { email, password })
@@ -22,11 +24,13 @@ class Auth {
     // .then((response) => response.data);
   }
 
+  // LOG USER OUT//
   logout() {
     return this.auth.post("/auth/logout", {}).then(({ data }) => data);
     // return this.auth.post("/auth/logout", {}).then((response) => response.data);
   }
 
+  // RETURNS LOGGED USER //
   me() {
     return this.auth.get("/auth/me").then(({ data }) => data);
     // return this.auth.get("/auth/me").then((response) => response.data);
