@@ -9,9 +9,9 @@ class Auth {
   }
 
   // CREATE A USER//
-  signup({ email, password }) {
+  signup({ email, password, dateOfBirth, sex, sexualOrientation, ethnicity, nationality }) {
     return this.auth
-      .post("/auth/signup", { email, password })
+      .post("/auth/signup", { email, password, dateOfBirth, sex, sexualOrientation, ethnicity, nationality })
       .then(({ data }) => data);
     // .then((response) => response.data);
   }

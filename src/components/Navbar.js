@@ -4,7 +4,7 @@ import { withAuth } from "./../lib/Auth";
 
 class Navbar extends Component {
   render() {
-    const { user, logout, isLoggedIn } = this.props;
+    const {logout, isLoggedIn } = this.props;
 
     return (
       <nav className="navbar">

@@ -18,6 +18,7 @@ const withAuth = WrappedComponent => {
                 login={login}
                 signup={signup}
                 logout={logout}
+                
                 {...this.props}
               />
             );
@@ -59,9 +60,9 @@ class AuthProvider extends React.Component {
       );
   }
 
-  signup = (email, password) => {
+  signup = (email, password, dateOfBirth, sex, sexualOrientation, ethnicity, nationality) => {
     authService
-      .signup({ email, password })
+      .signup({email, password, dateOfBirth, sex, sexualOrientation, ethnicity, nationality})
       .then(user => this.setState({ isLoggedIn: true, user }))
       .catch(err => console.log(err));
   };
