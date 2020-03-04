@@ -15,7 +15,7 @@ class Report {
 
     userReports(id){
         return this.report
-            .get(`/report/${id}`, {})
+            .get(`/report/${id}`)
             .then(({data}) => data);
     };
 
@@ -33,7 +33,7 @@ class Report {
 
     deleteReport(id){
         return this.report
-            .delete(`report/${id}`, {})
+            .delete(`report/${id}`)
             .then(({data}) => data);
     };
 };
