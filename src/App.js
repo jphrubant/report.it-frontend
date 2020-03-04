@@ -23,7 +23,6 @@ class App extends Component {
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
 
-          {/* <PrivateRoute exact path="/" component={Home} /> */}
           <PrivateRoute exact path="/account" component={Account} />
         </Switch>
       </div>
