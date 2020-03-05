@@ -1,7 +1,5 @@
-//	lib/Auth.js
-
 import React, { Component } from "react";
-import authService from "./auth-service"; // IMPORT functions for axios requests to API
+import authService from "./auth-service"; 
 const { Consumer, Provider } = React.createContext();
 
 // HOC to create a Consumer
@@ -28,18 +26,6 @@ const withAuth = WrappedComponent => {
     }
   };
 };
-
-/* 
-// HOC - function component example of the same functionality
-function withAuthFunc(WrappedComponent) {
-  return function(props) {
-    // props will belong to the WrappedComponent
-    return (
-      <Consumer>{value => <WrappedComponent {...value} {...props} />}</Consumer>
-    );
-  };
-}
- */
 
 // Provider
 class AuthProvider extends React.Component {
@@ -90,12 +76,7 @@ class AuthProvider extends React.Component {
         {this.props.children}
       </Provider>
     );
-    /*
-      <Provider> `value={}` data will be available to all <Consumer> components 
-    */
   }
 }
 
 export { withAuth, AuthProvider };
-
-//      Consumer ,  Provider

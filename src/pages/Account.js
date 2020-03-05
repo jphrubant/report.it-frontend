@@ -4,11 +4,9 @@ import { withAuth } from "./../lib/Auth";
 import authService from "../lib/auth-service";
 
 class Account extends Component {
-
   state = {
     id : '',
     email: '',
-    // password: '',
     dateOfBirth: '',
     sex: '',
     sexualOrientation: '',
@@ -17,9 +15,6 @@ class Account extends Component {
 }
 
   componentDidMount(){
-    // const user = authService.me()
-    // console.log('USER', user)
-    // console.log('this.props.user', this.props.user)
     authService.me()
     .then((data) => {
         console.log(data);
