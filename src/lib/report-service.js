@@ -19,7 +19,7 @@ class Report {
     return this.report  
       .post('/report', {...reportObj})
       .then(({data}) => data);
-};
+  };
 
     // UPDATE A REPORT //
   updateReport(id, reportObj){

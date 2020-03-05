@@ -31,9 +31,9 @@ handleFormSubmit = event => {
   event.preventDefault();
 
   const { email, dateOfBirth, sex, sexualOrientation, ethnicity, nationality } = this.state;
-  const _id = this.props.user._id;
+  const id = this.props.user._id;
   
-  userService.userEdit(_id, email, dateOfBirth, sex, sexualOrientation, ethnicity, nationality);
+  userService.userEdit(id, email, dateOfBirth, sex, sexualOrientation, ethnicity, nationality);
   this.props.history.push("/account")
 };
 
@@ -43,7 +43,7 @@ handleChange = event => {
 };
 
 render() {
-  const { email, password, dateOfBirth, sex, sexualOrientation, ethnicity, nationality } = this.state;
+  const { email, dateOfBirth, sex, sexualOrientation, ethnicity, nationality } = this.state;
   return (
    <div>
     <h1>Edit Account Information</h1>
@@ -56,15 +56,6 @@ render() {
         value={email}
         onChange={this.handleChange}
         />
-      <br />
-  
-      <label>Password:*</label>
-      <input
-        type="password"
-        name="password"
-        value={password}
-        onChange={this.handleChange}
-      />
       <br />
       <hr />
   

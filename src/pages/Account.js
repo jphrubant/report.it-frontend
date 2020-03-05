@@ -28,12 +28,12 @@ class Account extends Component {
         <h1>Welcome to your account area</h1>
         <h2>Account info</h2>
         <ul>
-          <li>Email:{this.state.email}</li>
-          <li>Date of birth:{this.state.dateOfBirth}</li>
+          <li>Email: {this.state.email}</li>
+          <li>Date of birth: {this.state.dateOfBirth}</li>
           <li>Sex: {this.state.sex}</li>
-          <li>Sexual orientation:{this.state.sexualOrientation}</li>
+          <li>Sexual orientation: {this.state.sexualOrientation}</li>
           <li>Ethnicity: {this.state.ethnicity}</li>
-          <li>Nationality{this.state.nationality}</li>
+          <li>Nationality: {this.state.nationality}</li>
           <li>Reports: {this.state.reports}</li>
         </ul>
         <p>Here you can view your reports and update your account info</p>
