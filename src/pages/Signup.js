@@ -16,7 +16,6 @@ class Signup extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     const { email, password, dateOfBirth, sex, sexualOrientation, ethnicity, nationality } = this.state;
-
     this.props.signup(email, password, dateOfBirth, sex, sexualOrientation, ethnicity, nationality);
   };
 
@@ -31,7 +30,6 @@ class Signup extends Component {
       <div>
         <h1>Create an Account</h1>
         <p>Already have account? <Link to={"/login"}> Login</Link></p>
-        
         <p>Only fields marked with a * are mandatory</p>
         <form onSubmit={this.handleFormSubmit}>
           <label>email:*</label>
