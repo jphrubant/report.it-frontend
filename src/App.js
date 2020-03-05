@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Account from "./pages/Account";
+import EditAccount from "./pages/EditAccount"
 
 import AnonRoute from "./components/AnonRoute";
 import PrivateRoute from "./components/PrivateRoute";
@@ -24,6 +25,7 @@ class App extends Component {
           <AnonRoute exact path="/login" component={Login} />
 
           <PrivateRoute exact path="/account" component={Account} />
+          <PrivateRoute exact path="/EditAccount/:id" component={EditAccount} />
         </Switch>
       </div>
     );

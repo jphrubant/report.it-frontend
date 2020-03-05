@@ -7,7 +7,6 @@ class Login extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     const { email, password } = this.state;
-
     this.props.login(email, password);
   };
 

@@ -67,7 +67,7 @@ class Signup extends Component {
             name="sex"
             value={sex}
             onChange={this.handleChange}>
-            <option> - Select - </option>
+            <option value=""> Select </option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Trans">Trans</option>
@@ -81,7 +81,7 @@ class Signup extends Component {
             name="sexualOrientation"
             value={sexualOrientation}
             onChange={this.handleChange}>
-            <option> - Select - </option>
+            <option value=""> Select </option>
             <option value="Heterosexual">Heterosexual</option>
             <option value="Homosexual">Homosexual</option>
             <option value="Bisexual">Bisexual</option>
@@ -95,7 +95,7 @@ class Signup extends Component {
             name="ethnicity"
             value={ethnicity}
             onChange={this.handleChange}>
-            <option> - Select - </option>
+            <option value=""> Select </option>
             <option value="White">White</option>
             <option value="Black">Black</option>
             <option value="Asian">Asian</option>
