@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
-import MapGL from 'react-map-gl';
+import MapGL, {Marker} from 'react-map-gl';
 
 const MAPBOX_TOKEN = "pk.eyJ1IjoianBocnViYW50IiwiYSI6ImNrN2V6MDgxYzEyY3AzZnBhOThhYmdreDIifQ.mefIMl5Hx9X-_5zopU7kNQ" // Set your mapbox token here
 
@@ -22,9 +22,9 @@ class Map extends Component {
     return (
       <MapGL
         {...this.state.viewport}
-        width="500px"
-        height="500px"
-        mapStyle="mapbox://styles/mapbox/dark-v9"
+        width="300px"
+        height="300px"
+        mapStyle="mapbox://styles/jphrubant/ck7f0leta2c9x1ir08h3vzq3f"
         onViewportChange={viewport => this.setState({viewport})}
         mapboxApiAccessToken={MAPBOX_TOKEN}
       />
