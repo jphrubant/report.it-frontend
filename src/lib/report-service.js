@@ -34,7 +34,7 @@ class Report {
       .delete(`report/${id}`)
       .then(({data}) => data);
   };
-};
+}
 
 const reportService = new Report();
 export default reportService;
