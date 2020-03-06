@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 import ReactMapGL, {Marker, Popup} from 'react-map-gl';
+import reportService from './../lib/report-service'
 
 const MAPBOX_TOKEN = "pk.eyJ1IjoianBocnViYW50IiwiYSI6ImNrN2V6MDgxYzEyY3AzZnBhOThhYmdreDIifQ.mefIMl5Hx9X-_5zopU7kNQ" // Set your mapbox token here
 
@@ -16,14 +17,27 @@ class Map extends Component {
         pitch: 0,
       },
       pinVisible: false,
-      newPin: null // <---- array of coordinates
+      newPin: null, // <---- array of coordinates
+      allReports: []
     };
-  }
+  };
+
+  componentDidMount () {
+    reportService
+      .allReports()
+      .then(allReps => {
+        console.log('allreeeeeeps', allReps)
+        this.setState({allReports: allReps})
+      })
+      .catch(err => {
+        console.log(err)
+      });
+  };
 
   mapClick = (event) => {
     const pinVisible = !this.state.pinVisible;
     this.setState({newPin: event.lngLat, pinVisible})
-  }
+  };
 
   render() {
     return (
@@ -38,24 +52,27 @@ class Map extends Component {
           onClick={this.mapClick}
         >
 
-        <Marker longitude={2.167949} latitude={41.388619} >
-          <button>PIN</button>
-        </Marker>
-
+        {this.state.allReports.map(oneReport => {
+          console.log('oneReport', oneReport)
+            return (
+              <Marker key={oneReport._id} longitude={oneReport.location[0]} latitude={oneReport.location[1]} >
+                <p>{oneReport.motivation} abuse</p>
+              </Marker>
+            );
+          })
+        };
+      
         {(this.state.newPin && this.state.pinVisible) 
-        ? (<Popup
-          longitude={this.state.newPin[0]}
-          latitude={this.state.newPin[1]}
-          closeButton={false} 
-          closeOnClick={false}>
-
+          ? (<Popup
+            longitude={this.state.newPin[0]}
+            latitude={this.state.newPin[1]}
+            closeButton={false} 
+            closeOnClick={false}>
             <Link to={`/create-report/?lng=${this.state.newPin[0]}&lat=${this.state.newPin[1]}`}>
               <button>Report an incident</button>
             </Link>
-
-        </Popup>)
-        : null }
-        
+            </Popup>)
+            : null }
         </ReactMapGL>
       </div>
     );
