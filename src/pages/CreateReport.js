@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { withAuth } from "../lib/Auth";
-import reportService from './../lib/report-service'
-import authService from './../lib/auth-service'
+import reportService from './../lib/report-service';
+import authService from './../lib/auth-service';
+import queryString from 'query-string';
 
 class CreateReport extends Component {
   constructor(props){
@@ -25,6 +26,10 @@ class CreateReport extends Component {
       .catch(err => {
       console.log(err)
       })
+
+    const values = queryString.parse(this.props.location.search)
+    const { lng, lat } = values;
+    this.setState({location:[Number(lng),Number(lat)]})
   }
 
   handleFormSubmit = event => {
