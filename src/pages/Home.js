@@ -1,5 +1,6 @@
 import React from 'react'
 import Map from "./../components/Map"
+import { Link } from "react-router-dom";
 
 function Home() {
   
@@ -8,6 +9,11 @@ function Home() {
       <h1>Main Page</h1>
       <p> Here you can view the map of all reports</p>
       <Map />
+
+      <Link to="/create-report">
+          <button>Report an incident</button>
+        </Link>
+
     </div>
   )
 }

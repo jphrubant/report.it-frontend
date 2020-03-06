@@ -15,9 +15,9 @@ class Report {
   };
     
     // CREATE A REPORT//
-  createReport(reportObj){
+  createReport(motivation, type, space, description, time, date, location, user){
     return this.report  
-      .post('/report', {...reportObj})
+      .post('/report', {motivation, type, space, description, time, date, location, user})
       .then(({data}) => data);
   };
 
