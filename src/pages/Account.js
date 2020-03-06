@@ -12,6 +12,7 @@ class Account extends Component {
     sexualOrientation: '',
     ethnicity: '',
     nationality: '',
+    reports: ''
 }
 
   componentDidMount(){

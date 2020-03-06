@@ -5,15 +5,16 @@ import authService from './../lib/auth-service'
 
 class EditAccount extends Component {
   constructor(props){
-  super(props)
-  this.state = {
-  id : '',
-  email: '',
-  dateOfBirth: '',
-  sex: '',
-  sexualOrientation: '',
-  ethnicity: '',
-  nationality: '',
+    super(props)
+    this.state = {
+      id : '',
+      email: '',
+      dateOfBirth: '',
+      sex: '',
+      sexualOrientation: '',
+      ethnicity: '',
+      nationality: ''
+      // reports: ''
   }
 }
 
