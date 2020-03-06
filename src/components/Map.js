@@ -56,7 +56,7 @@ class Map extends Component {
           console.log('oneReport', oneReport)
             return (
               <Marker key={oneReport._id} longitude={oneReport.location[0]} latitude={oneReport.location[1]} >
-                <p>{oneReport.motivation} abuse</p>
+                <div>{oneReport.motivation} abuse</div>
               </Marker>
             );
           })

@@ -4,8 +4,7 @@ import { withAuth } from "./../lib/Auth";
 
 class Navbar extends Component {
   render() {
-    const {logout, isLoggedIn } = this.props;
-
+    const {logout, isLoggedIn} = this.props;
     return (
       <nav className="navbar">
         <Link to={"/"} id="home-btn">
@@ -13,7 +12,9 @@ class Navbar extends Component {
         </Link>
         {isLoggedIn ? (
           <>
-            <p>Welcome back. You are logged in with the email: {this.props.user.email}</p>
+            <p>Welcome back.</p> <br/>
+            <p> Click the map to make a report</p>
+            { /*You are logged in with {this.props.user.email} */}
             <button onClick={logout}>Logout</button>
             <Link to='/account'>
               <button>My Account</button>
@@ -21,6 +22,8 @@ class Navbar extends Component {
           </>
         ) : (
           <>
+            <p>Welcome</p> <br/>
+            <p>Signup or Login to make a report</p>
             <Link to="/login">
               {" "}
               <button className="navbar-button">Login</button>
