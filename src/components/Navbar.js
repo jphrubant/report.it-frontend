@@ -7,7 +7,7 @@ class Navbar extends Component {
     const {logout, isLoggedIn} = this.props;
     return (
       <nav className="navbar">
-        <Link to={"/"} class="nav-link">
+        <Link to={"/"} className="nav-link">
           <h4 className="logo">Report.it</h4>
         </Link>
         {isLoggedIn ? (
@@ -26,7 +26,6 @@ class Navbar extends Component {
                 <Link to="/login">
                   <button className="navbar-button">Login</button>
                 </Link>
-                
                 <Link to="/signup">
                   <button className="navbar-button">Sign Up</button>
                 </Link>

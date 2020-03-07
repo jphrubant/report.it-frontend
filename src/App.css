@@ -13,6 +13,7 @@ a {
 
 h1{
   font-size: 35px;
+  text-align: center;
 }
 
 textarea{
@@ -24,7 +25,7 @@ textarea{
 .navbar { 
   display: flex;
   width: 100%;
-  background-color: #349DB3;
+  background-color: #A9BFF5;
   color: floralwhite ;
   justify-content: space-between;
   padding-bottom: 5px;
@@ -110,6 +111,7 @@ select{
 }
 
 .submit-button-div{
+  padding-top: 10px;
   display: flex;
   justify-content: center;
 }
@@ -141,7 +143,36 @@ select{
   align-items: center;
 }
 
-/* ---Report--- */
+.report-item{
+  display: flex;
+  justify-content: space-between;
+}
+
+.incident{
+   justify-content: flex-start;
+}
+
+.edit-button-div{
+  justify-content: flex-end;
+}
+
+.edit-button {
+  font-size: 15px;
+  padding: 5px;
+  height: 40px;
+  width: 70px;
+  margin: 5px 10px 0 10px;
+  border-radius: 3px;
+  background-color: floralwhite ;
+  border: 1px solid #353C4C;
+  color: #353C4C;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+
+
+/* ---REPORTS--- */
 
 .report-div{
   padding: 0 20px 20px 20px;
@@ -149,7 +180,6 @@ select{
   flex-direction: column;
   align-items: center;
 }
-
 
 /* ---MAP--- */
 .pin{

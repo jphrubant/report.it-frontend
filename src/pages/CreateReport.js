@@ -19,8 +19,10 @@ class CreateReport extends Component {
     }
 
   componentDidMount(){
+    console.log('COMPONENT MOUNTED')
     authService.me()
       .then((data) => {
+        console.log('DATA-CREATEREPORT', data)
       this.setState({...data})
       })
       .catch(err => {
@@ -61,7 +63,7 @@ class CreateReport extends Component {
                 name="motivation"
                 value={motivation}
                 onChange={this.handleChange}>
-                <option value=""> Select </option>
+                <option value=""> - Select - </option>
                 <option value="Sexist">Sexist</option>
                 <option value="Racist">Racist</option>
                 <option value="Homophobic">Homophobic</option>
@@ -78,7 +80,7 @@ class CreateReport extends Component {
                 name="type"
                 value={type}
                 onChange={this.handleChange}>
-                <option value=""> Select </option>
+                <option value=""> - Select - </option>
                 <option value="Verbal">Verbal</option>
                 <option value="Physical">Physical</option>
               </select>
@@ -90,7 +92,7 @@ class CreateReport extends Component {
                 name="space"
                 value={space}
                 onChange={this.handleChange}>
-                <option value=""> Select </option>
+                <option value=""> - Select - </option>
                 <option value="Outside">Outside</option>
                 <option value="Inside">Inside</option>
               </select>
@@ -129,7 +131,7 @@ class CreateReport extends Component {
             </div>
 
             <div className="submit-button-div">
-              <button class="submit-button">Submit Report</button>
+              <button className="submit-button" type="submit">Submit Report</button>
             </div>
 
           </div>

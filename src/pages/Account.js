@@ -18,8 +18,6 @@ class Account extends Component {
   componentDidMount(){
     authService.me()
     .then((data) => {
-        console.log(data);
-        console.log('DATA.REPORTS', data.reports)
         this.setState({...data})
     })
   }
@@ -41,22 +39,30 @@ class Account extends Component {
             </ul>
           </div>
 
-          <Link to={`/EditAccount/${this.props.user._id}`}>
+          <Link to={'/edit-account'}>
             <div className="submit-button-div">
-              <button class="submit-button">Edit Information</button>
+              <button className="submit-button">Edit Information</button>
             </div>
           </Link>
-
+          <h1>My reports</h1>
           <div>
-            <h3>My reports</h3>
+            <hr></hr>
             {this.state.reports.map(oneReport => {
-              console.log('ONE REPORT', oneReport.motivation)
               return (
-                <ul>
-                  <li key={oneReport._id}> {oneReport.motivation}</li>
-                </ul>
+              <div className="report-item">
+
+              <div className="incident">
+                <p key={oneReport._id}> {oneReport.motivation} incident</p> 
+              </div>
+
+              <div className="edit-button-div">
+                <button className="edit-button">Edit</button> 
+                <button className="edit-button">Delete</button> 
+              </div>
+
+              </div>
               )
-             }
+            }
             )}
           </div>
         </div>
