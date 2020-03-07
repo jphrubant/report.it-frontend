@@ -44,8 +44,8 @@ class Map extends Component {
       <div>
         <ReactMapGL
           {...this.state.viewport}
-          width="500px"
-          height="500px"
+          width="100vw"
+          height="100vh"
           mapStyle="mapbox://styles/jphrubant/ck7f0leta2c9x1ir08h3vzq3f"
           onViewportChange={viewport => this.setState({viewport})}
           mapboxApiAccessToken={MAPBOX_TOKEN}
@@ -56,21 +56,22 @@ class Map extends Component {
           console.log('oneReport', oneReport)
             return (
               <Marker key={oneReport._id} longitude={oneReport.location[0]} latitude={oneReport.location[1]} >
-                <div>{oneReport.motivation} abuse</div>
+                {/* <div>{oneReport.motivation} abuse</div> */}
+                <img className="pin" src="./pin.png" alt="pin" />
               </Marker>
             );
           })
-        };
+        }
       
         {(this.state.newPin && this.state.pinVisible) 
           ? (<Popup
-            longitude={this.state.newPin[0]}
-            latitude={this.state.newPin[1]}
-            closeButton={false} 
-            closeOnClick={false}>
-            <Link to={`/create-report/?lng=${this.state.newPin[0]}&lat=${this.state.newPin[1]}`}>
-              <button>Report an incident</button>
-            </Link>
+              longitude={this.state.newPin[0]}
+              latitude={this.state.newPin[1]}
+              closeButton={false} 
+              closeOnClick={false}>
+              <Link to={`/create-report/?lng=${this.state.newPin[0]}&lat=${this.state.newPin[1]}`}>
+                <button>Report an incident</button>
+              </Link>
             </Popup>)
             : null }
         </ReactMapGL>

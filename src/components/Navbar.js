@@ -7,34 +7,33 @@ class Navbar extends Component {
     const {logout, isLoggedIn} = this.props;
     return (
       <nav className="navbar">
-        <Link to={"/"} id="home-btn">
-          <h4>Home</h4>
+        <Link to={"/"} class="nav-link">
+          <h4 className="logo">Report.it</h4>
         </Link>
         {isLoggedIn ? (
-          <>
-            <p>Welcome back.</p> <br/>
-            <p> Click the map to make a report</p>
-            { /*You are logged in with {this.props.user.email} */}
-            <button onClick={logout}>Logout</button>
-            <Link to='/account'>
-              <button>My Account</button>
-            </Link>
-          </>
+          <div className="nav-div">
+              <div className="button-div">
+                <button className="navbar-button" onClick={logout}>Logout</button>
+                <Link to='/account'>
+                  <button className="navbar-button">My Account</button>
+                </Link>
+              </div>
+              <p className="nav-instruction"> Click the map to make a report</p>
+          </div>
         ) : (
           <>
-            <p>Welcome</p> <br/>
-            <p>Signup or Login to make a report</p>
-            <Link to="/login">
-              {" "}
-              <button className="navbar-button">Login</button>
-              {" "}
-            </Link>
-            <br />
-            <Link to="/signup">
-              {" "}
-              <button className="navbar-button">Sign Up</button>
-              {" "}
-            </Link>
+            <div className="nav-div">
+              <div className="button-div">
+                <Link to="/login">
+                  <button className="navbar-button">Login</button>
+                </Link>
+                
+                <Link to="/signup">
+                  <button className="navbar-button">Sign Up</button>
+                </Link>
+              </div>
+              <p className="nav-instruction">Login or signup to make a report</p>
+            </div>
           </>
         )}
       </nav>

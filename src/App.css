@@ -1,22 +1,137 @@
 html, body {
   margin: 0;
   padding: 0;
+  background-color: ivory;
+  color: #805E5D;
+  font-family: 'Open Sans', sans-serif;
 }
 
-nav.navbar { 
+a {
+  text-decoration: none;
+}
+
+h1{
+  font-size: 35px;
+}
+
+
+/* ---NAV BAR--- */
+
+.navbar { 
   display: flex;
-  padding: 0px 20px;
-  background: #686de0;
+  width: 100%;
+  background: #FF726E;
+  color: ivory;
+  justify-content: space-between;
+  align-items: baseline
 }
 
-button.navbar-button {
-  padding: 5px 20px;
+.nav-div{
+  margin: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar-button {
+  font-size: 15px;
+  padding: 5px;
   width: 100px;
-  margin: 15px 10px;
+  margin: 5px 5px 0 5px;
+  border-radius: 3px;
+  background-color: ivory;
+  color: #805E5D;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.button-div{
+  margin-bottom: 0;
+}
+
+.nav-instruction{
+  margin: 2px 0 0 0;
+  font-size: 13px;
+}
+
+.logo{
+  font-size: 25px;
+  font-weight: bold;
+  color: ivory;
+  padding-left: 30px;
+  margin-top: 10px;
+}
+
+/* ---FORM--- */
+
+label{
+  font-size: 20px;
+  padding: 10px;
+}
+
+.auth-form{
+  padding-top: 30px;
+}
+
+.form-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-item{
+  padding: 8px;
+}
+
+input{
+  height: 22px;
+  width: 135px;
+  font-size: 18px;
+  color: #805E5D;
+  border: 1px solid #805E5D;
+}
+
+select{
+  height: 25px;
+  width: 135px;
+  font-size: 18px;
+  color: #805E5D;
+  border: 1px solid #805E5D;
   border-radius: 3px;
 }
 
-#home-btn {
-  color: white;
-  text-decoration: none;
+.email-input{
+  width: 175px;
 }
+
+.submit-button-div{
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button{
+  font-size: 18px;
+  padding: 5px;
+  height: 35px;
+  width: 260px;
+  margin: 5px 5px 0 5px;
+  border-radius: 3px;
+  background-color: ivory;
+  color: #805E5D;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  border: 1px solid #805E5D;
+}
+
+.dob-input{
+  width: 155px;
+}
+
+
+/* ---MAP--- */
+.pin{
+  height: 30px
+}
+
+
+

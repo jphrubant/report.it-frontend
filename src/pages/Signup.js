@@ -27,20 +27,23 @@ class Signup extends Component {
   render() {
     const { email, password, dateOfBirth, sex, sexualOrientation, ethnicity, nationality } = this.state;
     return (
-      <div>
+      <div className="form-div auth-form">
         <h1>Create an Account</h1>
-        <p>Already have account? <Link to={"/login"}> Login</Link></p>
         <p>Only fields marked with a * are mandatory</p>
         <form onSubmit={this.handleFormSubmit}>
+        <div className="form-cluster">
+        <div className="form-item">
           <label>email:*</label>
           <input
+            className="email-input"
             type="text"
             name="email"
             value={email}
             onChange={this.handleChange}
           />
-          <br />
+          </div>
 
+          <div className="form-item">
           <label>Password:*</label>
           <input
             type="password"
@@ -48,52 +51,63 @@ class Signup extends Component {
             value={password}
             onChange={this.handleChange}
           />
-          <br />
+          </div>
           <hr />
 
+          <div className="form-item">
           <label>Date of birth</label>
           <input
+            className="dob-input"
             type="date"
             name="dateOfBirth"
             value={dateOfBirth}
             onChange={this.handleChange}
           />
-          <br />
+          </div>
 
+          <div className="form-item">
           <label>Sex:</label>
-          <select type="text"
+          <select 
+            className="select-input"
+            type="text"
             name="sex"
             value={sex}
             onChange={this.handleChange}>
-            <option value=""> Select </option>
+            <option value=""> - Select - </option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Trans">Trans</option>
             <option value="Intersex">Intersex</option>
             <option value="Other">Other</option>
           </select>
-          <br />
+          </div>
 
+          <div className="form-item">
           <label>Sexual Orientation:</label>
-          <select type="text"
+          <select 
+            className="select-input"
+            type="text"
             name="sexualOrientation"
             value={sexualOrientation}
             onChange={this.handleChange}>
-            <option value=""> Select </option>
+            <option value=""> - Select - </option>
             <option value="Heterosexual">Heterosexual</option>
             <option value="Homosexual">Homosexual</option>
             <option value="Bisexual">Bisexual</option>
             <option value="Asexual">Asexual</option>
             <option value="Other">Other</option>
           </select>
-          <br />
+          </div>
 
+          <div className="form-item">
           <label>Ethnicity:</label>
-          <select type="text"
+          <select 
+            className="select-input"
+            type="text"
             name="ethnicity"
             value={ethnicity}
             onChange={this.handleChange}>
-            <option value=""> Select </option>
+            <option value=""> - Select - </option>
             <option value="White">White</option>
             <option value="Black">Black</option>
             <option value="Asian">Asian</option>
@@ -103,8 +117,9 @@ class Signup extends Component {
             <option value="Mixed">Mixed</option>
             <option value="Other">Other</option>
           </select>
-          <br />
+          </div>
 
+          <div className="form-item">
           <label>Nationality:</label>
           <input
             type="nationality"
@@ -112,10 +127,14 @@ class Signup extends Component {
             value={nationality}
             onChange={this.handleChange}
           />
-          <br />
-
-          <input type="submit" value="Signup" />
+          </div>
+          </div>
+          
+          <div className="submit-button-div">
+            <button className="submit-button" type="submit">Sign up</button>
+          </div>
         </form>
+        <p>Already have account? <Link to={"/login"}> Login</Link></p>
       </div>
     );
   }

@@ -20,26 +20,37 @@ class Login extends Component {
     const { email, password } = this.state;
 
     return (
-      <div>
+      <div className="form-div auth-form">
         <h1>Login</h1>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>email:</label>
-          <input
-            type="text"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-          />
+        <form  onSubmit={this.handleFormSubmit}>
 
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-          />
+        <div className="form-cluster">
+          <div className="form-item">
+            <label>email: </label>
+            <input
+              className="email-input"
+              type="text"
+              name="email"
+              value={email}
+              onChange={this.handleChange}
+            />
+          </div>
 
-          <input type="submit" value="Login" />
+          <div className="form-item">
+            <label>Password: </label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={this.handleChange}
+            />
+          </div>
+        </div>
+
+          <div className="submit-button-div">
+            <button className="submit-button" type="submit" value="Login">Log into account</button>
+          </div>
+
         </form>
         <p>Don't have an account yet? <Link to={"/signup"}>Signup!</Link></p>
       </div>

@@ -12,13 +12,14 @@ class Account extends Component {
     sexualOrientation: '',
     ethnicity: '',
     nationality: '',
-    reports: ''
+    reports: []
 }
 
   componentDidMount(){
     authService.me()
     .then((data) => {
         console.log(data);
+        console.log('DATA.REPORTS', data.reports)
         this.setState({...data})
     })
     }
@@ -35,12 +36,18 @@ class Account extends Component {
           <li>Sexual orientation: {this.state.sexualOrientation}</li>
           <li>Ethnicity: {this.state.ethnicity}</li>
           <li>Nationality: {this.state.nationality}</li>
-          <li>Reports: {this.state.reports}</li>
         </ul>
         <p>Here you can view your reports and update your account info</p>
         <Link to={`/EditAccount/${this.props.user._id}`}>
           <button>Edit Account Information</button>
         </Link>
+
+
+        {this.state.reports.map(oneReport => {
+          console.log('ONE REPORT', oneReport.motivation)
+          return (<p key={oneReport._id}>Reports: {oneReport.motivation}</p>)
+        })}
+        
 
       </div>
     );
