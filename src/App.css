@@ -4,6 +4,7 @@ html, body {
   background-color: ivory;
   color: #805E5D;
   font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
 }
 
 a {
@@ -14,20 +15,19 @@ h1{
   font-size: 35px;
 }
 
-
 /* ---NAV BAR--- */
 
 .navbar { 
   display: flex;
   width: 100%;
-  background: #FF726E;
+  background-color: #FF726E;
   color: ivory;
   justify-content: space-between;
-  align-items: baseline
+  padding-bottom: 5px;
 }
 
 .nav-div{
-  margin: 11px;
+  margin: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +37,7 @@ h1{
   font-size: 15px;
   padding: 5px;
   width: 100px;
-  margin: 5px 5px 0 5px;
+  margin: 5px 10px 0 10px;
   border-radius: 3px;
   background-color: ivory;
   color: #805E5D;
@@ -48,18 +48,19 @@ h1{
 .button-div{
   margin-bottom: 0;
 }
-
-.nav-instruction{
-  margin: 2px 0 0 0;
-  font-size: 13px;
+ 
+.nav-link{
+  padding-bottom: 0;
 }
 
 .logo{
-  font-size: 25px;
+  font-size: 27px;
   font-weight: bold;
   color: ivory;
   padding-left: 30px;
-  margin-top: 10px;
+  padding-top: 5px;
+  margin: 0;
+  text-decoration: underline;
 }
 
 /* ---FORM--- */
@@ -97,7 +98,7 @@ select{
   font-size: 18px;
   color: #805E5D;
   border: 1px solid #805E5D;
-  border-radius: 3px;
+  background-color: white;
 }
 
 .email-input{
@@ -127,10 +128,44 @@ select{
   width: 155px;
 }
 
+/* ---ACCOUNT--- */
+
+.account-div{
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account-section{
+  
+}
 
 /* ---MAP--- */
 .pin{
   height: 30px
+}
+
+.map-instruction{
+  font-size: 15px;
+  font-weight: bold;
+  background-color: ivory;
+  width: 240px;
+  padding: 5px;
+  margin: 5px;
+  border: 1px ivory solid;
+  border-radius: 3%;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  position: fixed; 
+  bottom:0%;
+}
+
+.popup-button{
+  font-size: 15px;
+  font-weight: bold;
+  color: #805E5D;
+  background-color: white;
+  border: none;
 }
 
 

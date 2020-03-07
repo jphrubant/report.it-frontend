@@ -23,8 +23,8 @@ class Login extends Component {
       <div className="form-div auth-form">
         <h1>Login</h1>
         <form  onSubmit={this.handleFormSubmit}>
-
-        <div className="form-cluster">
+        <div>
+         <hr></hr>
           <div className="form-item">
             <label>email: </label>
             <input

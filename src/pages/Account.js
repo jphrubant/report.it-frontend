@@ -22,33 +22,44 @@ class Account extends Component {
         console.log('DATA.REPORTS', data.reports)
         this.setState({...data})
     })
-    }
+  }
 
   render() {
     return (
-      <div>
-        <h1>Welcome to your account area</h1>
-        <h2>Account info</h2>
-        <ul>
-          <li>Email: {this.state.email}</li>
-          <li>Date of birth: {this.state.dateOfBirth}</li>
-          <li>Sex: {this.state.sex}</li>
-          <li>Sexual orientation: {this.state.sexualOrientation}</li>
-          <li>Ethnicity: {this.state.ethnicity}</li>
-          <li>Nationality: {this.state.nationality}</li>
-        </ul>
-        <p>Here you can view your reports and update your account info</p>
-        <Link to={`/EditAccount/${this.props.user._id}`}>
-          <button>Edit Account Information</button>
-        </Link>
+      <div className="account-div">
+        <h1>Account info</h1>
+        <div>
+          <div className="account-section">
+          <hr></hr>
+            <ul>
+              <li>Email: {this.state.email}</li>
+              <li>Date of birth: {this.state.dateOfBirth}</li>
+              <li>Sex: {this.state.sex}</li>
+              <li>Sexual orientation: {this.state.sexualOrientation}</li>
+              <li>Ethnicity: {this.state.ethnicity}</li>
+              <li>Nationality: {this.state.nationality}</li>
+            </ul>
+          </div>
 
+          <Link to={`/EditAccount/${this.props.user._id}`}>
+            <div className="submit-button-div">
+              <button class="submit-button">Edit Information</button>
+            </div>
+          </Link>
 
-        {this.state.reports.map(oneReport => {
-          console.log('ONE REPORT', oneReport.motivation)
-          return (<p key={oneReport._id}>Reports: {oneReport.motivation}</p>)
-        })}
-        
-
+          <div>
+            <h3>My reports</h3>
+            {this.state.reports.map(oneReport => {
+              console.log('ONE REPORT', oneReport.motivation)
+              return (
+                <ul>
+                  <li key={oneReport._id}> {oneReport.motivation}</li>
+                </ul>
+              )
+             }
+            )}
+          </div>
+        </div>
       </div>
     );
   }

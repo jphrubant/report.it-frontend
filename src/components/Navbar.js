@@ -18,7 +18,6 @@ class Navbar extends Component {
                   <button className="navbar-button">My Account</button>
                 </Link>
               </div>
-              <p className="nav-instruction"> Click the map to make a report</p>
           </div>
         ) : (
           <>
@@ -32,7 +31,6 @@ class Navbar extends Component {
                   <button className="navbar-button">Sign Up</button>
                 </Link>
               </div>
-              <p className="nav-instruction">Login or signup to make a report</p>
             </div>
           </>
         )}
