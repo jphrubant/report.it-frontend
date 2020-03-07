@@ -58,7 +58,7 @@ class Signup extends Component {
               <div className="form-item">
               <label>Date of birth</label>
               <input
-                className="dob-input"
+                className="date-input"
                 type="date"
                 name="dateOfBirth"
                 value={dateOfBirth}

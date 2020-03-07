@@ -1,8 +1,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: ivory;
-  color: #805E5D;
+  background-color: floralwhite ;
+  color: #353C4C;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
 }
@@ -15,13 +15,17 @@ h1{
   font-size: 35px;
 }
 
+textarea{
+  border: 1px solid #353C4C;
+}
+
 /* ---NAV BAR--- */
 
 .navbar { 
   display: flex;
   width: 100%;
-  background-color: #FF726E;
-  color: ivory;
+  background-color: #349DB3;
+  color: floralwhite ;
   justify-content: space-between;
   padding-bottom: 5px;
 }
@@ -39,8 +43,8 @@ h1{
   width: 100px;
   margin: 5px 10px 0 10px;
   border-radius: 3px;
-  background-color: ivory;
-  color: #805E5D;
+  background-color: floralwhite ;
+  color: #353C4C;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
 }
@@ -56,7 +60,7 @@ h1{
 .logo{
   font-size: 27px;
   font-weight: bold;
-  color: ivory;
+  color: floralwhite ;
   padding-left: 30px;
   padding-top: 5px;
   margin: 0;
@@ -88,16 +92,16 @@ input{
   height: 22px;
   width: 135px;
   font-size: 18px;
-  color: #805E5D;
-  border: 1px solid #805E5D;
+  color: #353C4C;
+  border: 1px solid #353C4C;
 }
 
 select{
   height: 25px;
   width: 135px;
   font-size: 18px;
-  color: #805E5D;
-  border: 1px solid #805E5D;
+  color: #353C4C;
+  border: 1px solid #353C4C;
   background-color: white;
 }
 
@@ -117,15 +121,15 @@ select{
   width: 260px;
   margin: 5px 5px 0 5px;
   border-radius: 3px;
-  background-color: ivory;
-  color: #805E5D;
+  background-color: floralwhite ;
+  color: #353C4C;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
-  border: 1px solid #805E5D;
+  border: 1px solid #353C4C;
 }
 
-.dob-input{
-  width: 155px;
+.date-input{
+  width: 153px;
 }
 
 /* ---ACCOUNT--- */
@@ -137,9 +141,15 @@ select{
   align-items: center;
 }
 
-.account-section{
-  
+/* ---Report--- */
+
+.report-div{
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 
 /* ---MAP--- */
 .pin{
@@ -149,11 +159,11 @@ select{
 .map-instruction{
   font-size: 15px;
   font-weight: bold;
-  background-color: ivory;
+  background-color: floralwhite;
   width: 240px;
   padding: 5px;
   margin: 5px;
-  border: 1px ivory solid;
+  border: 1px floralwhite  solid;
   border-radius: 3%;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   position: fixed; 
@@ -163,7 +173,7 @@ select{
 .popup-button{
   font-size: 15px;
   font-weight: bold;
-  color: #805E5D;
+  color: #353C4C;
   background-color: white;
   border: none;
 }

@@ -49,78 +49,90 @@ class CreateReport extends Component {
   render() {
     const {motivation, type, space, description, time, date} = this.state;
     return (
-      <div>
+      <div className="report-div">
         <h1>Report Form</h1>
-        <p> Please fill the form below to report an incident</p>
-        <p>All fields have to be filled to make a report</p>
+        <p>Please fill in all the fields to make a report</p>
         <form onSubmit={this.handleFormSubmit}>
-        
-          <label>Motivation:</label>
-          <select type="text"
-            name="motivation"
-            value={motivation}
-            onChange={this.handleChange}>
-            <option value=""> Select </option>
-            <option value="Sexist">Sexist</option>
-            <option value="Racist">Racist</option>
-            <option value="Homophobic">Homophobic</option>
-            <option value="Transphobic">Transphobic</option>
-            <option value="Islamophobic">Islamophobic</option>
-            <option value="Antisemitic">Antisemitic</option>
-            <option value="Other">Other</option>
-          </select>
-          <br />
+          <div>
+          <hr></hr>
+            <div className="form-item">
+              <label>Motivation: </label>
+              <select type="text"
+                name="motivation"
+                value={motivation}
+                onChange={this.handleChange}>
+                <option value=""> Select </option>
+                <option value="Sexist">Sexist</option>
+                <option value="Racist">Racist</option>
+                <option value="Homophobic">Homophobic</option>
+                <option value="Transphobic">Transphobic</option>
+                <option value="Islamophobic">Islamophobic</option>
+                <option value="Antisemitic">Antisemitic</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
 
-          <label>Type:</label>
-          <select type="text"
-            name="type"
-            value={type}
-            onChange={this.handleChange}>
-            <option value=""> Select </option>
-            <option value="Verbal">Verbal</option>
-            <option value="Physical">Physical</option>
-          </select>
-          <br />
+            <div className="form-item">
+              <label>Type: </label>
+              <select type="text"
+                name="type"
+                value={type}
+                onChange={this.handleChange}>
+                <option value=""> Select </option>
+                <option value="Verbal">Verbal</option>
+                <option value="Physical">Physical</option>
+              </select>
+            </div>
 
-          <label>Space:</label>
-          <select type="text"
-            name="space"
-            value={space}
-            onChange={this.handleChange}>
-            <option value=""> Select </option>
-            <option value="Outside">Outside</option>
-            <option value="Inside">Inside</option>
-          </select>
-          <br />
+            <div className="form-item">
+              <label>Space: </label>
+              <select type="text"
+                name="space"
+                value={space}
+                onChange={this.handleChange}>
+                <option value=""> Select </option>
+                <option value="Outside">Outside</option>
+                <option value="Inside">Inside</option>
+              </select>
+            </div>
 
-          <label>Description:</label>
-          <textarea
-            rows="4" 
-            cols="50"
-            name="description"
-            value={description}
-            onChange={this.handleChange}
-          />
-          <br />
+            <div className="form-item">
+            <label>Description: </label><br/>
+              <textarea
+                rows="10" 
+                cols="50"
+                name="description"
+                value={description}
+                onChange={this.handleChange}
+              />
+            </div>
 
-          <label>Time</label>
-            <input
-              type="time"
-              name="time"
-              value={time}
-              onChange={this.handleChange}
-            />
-          <br />
+            <div className="form-item">
+              <label>Time: </label>
+              <input
+                type="time"
+                name="time"
+                value={time}
+                onChange={this.handleChange}
+              />
+            </div>
 
-          <label>Date of incident</label>
-            <input
-              type="date"
-              name="date"
-              value={date}
-              onChange={this.handleChange}
-            />
-          <br />
-          <input type="submit" value="Submit report" />
+            <div className="form-item">
+              <label>Date: </label>
+              <input
+                className="date-input"
+                type="date"
+                name="date"
+                value={date}
+                onChange={this.handleChange}
+              />
+            </div>
+
+            <div className="submit-button-div">
+              <button class="submit-button">Submit Report</button>
+            </div>
+
+          </div>
         </form>
       </div>
     )
