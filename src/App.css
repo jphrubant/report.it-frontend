@@ -41,14 +41,14 @@ textarea{
 
 .navbar-button {
   font-size: 15px;
-  padding: 5px;
+  padding: 7px;
   width: 100px;
-  margin: 5px 10px 0 10px;
+  margin: 5px 5px 0 5px;
   border-radius: 3px;
   background-color: floralwhite ;
   color: #353C4C;
-  font-family: 'Open Sans', sans-serif;
   font-weight: bold;
+  border: none
 }
 
 .button-div{
@@ -126,7 +126,6 @@ select{
   border-radius: 3px;
   background-color: floralwhite ;
   color: #353C4C;
-  font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   border: 1px solid #353C4C;
 }
@@ -167,11 +166,8 @@ select{
   background-color: floralwhite ;
   border: 1px solid #353C4C;
   color: #353C4C;
-  font-family: 'Open Sans', sans-serif;
   font-weight: bold;
 }
-
-
 
 /* ---REPORTS--- */
 
