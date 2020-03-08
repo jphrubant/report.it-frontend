@@ -19,7 +19,8 @@ class Map extends Component {
       },
       pinVisible: false,
       newPin: null, // <---- array of coordinates
-      allReports: []
+      allReports: [],
+      filter: null
     };
   };
 
@@ -53,7 +54,9 @@ class Map extends Component {
           onClick={this.mapClick}
         >
 
-        {this.state.allReports.map(oneReport => {
+
+        {
+          this.state.allReports.map(oneReport => {
             return (
               <Marker key={oneReport._id} longitude={oneReport.location[0]} latitude={oneReport.location[1]}>
                 <img className="pin" src="./pin.png" alt="pin" />
