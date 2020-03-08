@@ -19,10 +19,8 @@ class CreateReport extends Component {
     }
 
   componentDidMount(){
-    console.log('COMPONENT MOUNTED')
     authService.me()
       .then((data) => {
-        console.log('DATA-CREATEREPORT', data)
       this.setState({...data})
       })
       .catch(err => {
@@ -36,10 +34,9 @@ class CreateReport extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const {motivation, type, space, description, time, date, location} = this.state;
+    const {role, motivation, type, space, description, time, date, location} = this.state;
     const user = this.props.user._id;
-    console.log('USEEEEEEEEER', user)
-    reportService.createReport(motivation, type, space, description, time, date, location, user);
+    reportService.createReport(role, motivation, type, space, description, time, date, location, user);
     this.props.history.push("/")
   };
 
@@ -49,7 +46,7 @@ class CreateReport extends Component {
   };
 
   render() {
-    const {motivation, type, space, description, time, date} = this.state;
+    const {role, motivation, type, space, description, time, date} = this.state;
     return (
       <div className="report-div">
         <h1>Report Form</h1>
@@ -57,6 +54,19 @@ class CreateReport extends Component {
         <form onSubmit={this.handleFormSubmit}>
           <div>
           <hr></hr>
+
+            <div className="form-item">
+              <label>You were the: </label>
+              <select type="text"
+                name="role"
+                value={role}
+                onChange={this.handleChange}>
+                <option value=""> - Select - </option>
+                <option value="Victim">Victim</option>
+                <option value="Witness">Witness</option>
+              </select>
+            </div>
+
             <div className="form-item">
               <label>Motivation: </label>
               <select type="text"
@@ -101,8 +111,8 @@ class CreateReport extends Component {
             <div className="form-item">
             <label>Description: </label><br/>
               <textarea
-                rows="10" 
-                cols="50"
+                rows="5" 
+                cols="30"
                 name="description"
                 value={description}
                 onChange={this.handleChange}

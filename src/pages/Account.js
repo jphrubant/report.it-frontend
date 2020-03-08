@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "./../lib/Auth";
 import authService from "../lib/auth-service";
+import reportService from "../lib/report-service"
 
 class Account extends Component {
   state = {
@@ -13,13 +14,30 @@ class Account extends Component {
     ethnicity: '',
     nationality: '',
     reports: []
-}
+  }
+
+  componentDidUpdate(){
+    authService.me()
+    .then((data) => {
+    this.setState({...data})
+    })
+    .catch(err => {
+    console.log(err)
+    })
+  }
 
   componentDidMount(){
     authService.me()
     .then((data) => {
         this.setState({...data})
     })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
+  handleDelete = reportId => {  
+    reportService.deleteReport(reportId)
   }
 
   render() {
@@ -28,7 +46,7 @@ class Account extends Component {
         <h1>Account info</h1>
         <div>
           <div className="account-section">
-          <hr></hr>
+            <hr></hr>
             <ul>
               <li>Email: {this.state.email}</li>
               <li>Date of birth: {this.state.dateOfBirth}</li>
@@ -38,7 +56,6 @@ class Account extends Component {
               <li>Nationality: {this.state.nationality}</li>
             </ul>
           </div>
-
           <Link to={'/edit-account'}>
             <div className="submit-button-div">
               <button className="submit-button">Edit Information</button>
@@ -49,21 +66,20 @@ class Account extends Component {
             <hr></hr>
             {this.state.reports.map(oneReport => {
               return (
-              <div className="report-item">
-
+            <div key={oneReport._id} className="report-item">
+      
               <div className="incident">
-                <p key={oneReport._id}> {oneReport.motivation} incident</p> 
+                <p > {oneReport.motivation} incident</p> 
               </div>
 
               <div className="edit-button-div">
-                <button className="edit-button">Edit</button> 
-                <button className="edit-button">Delete</button> 
+                <Link to={`/edit-report/${oneReport._id}`}>
+                  <button className="edit-button">Edit</button>
+                </Link>
+                <button className="edit-button" onClick={this.handleDelete.bind(this, oneReport._id)}>Delete</button>
               </div>
-
-              </div>
-              )
-            }
-            )}
+            </div>)
+            })}
           </div>
         </div>
       </div>

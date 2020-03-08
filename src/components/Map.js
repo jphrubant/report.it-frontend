@@ -27,7 +27,6 @@ class Map extends Component {
     reportService
       .allReports()
       .then(allReps => {
-        console.log('allreeeeeeps', allReps)
         this.setState({allReports: allReps})
       })
       .catch(err => {
@@ -74,7 +73,7 @@ class Map extends Component {
                 <button className="popup-button">- Report -</button>
               </Link>
               ) : (
-                <Link to="/login"><button className="popup-button">You must login to create a report</button></Link>
+                <Link to="/login"><button className="popup-button">- Login or signup to create a report -</button></Link>
               )}
             </Popup>)
             : null }
