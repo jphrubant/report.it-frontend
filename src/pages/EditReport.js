@@ -13,7 +13,6 @@ import reportService from "./../lib/report-service"
       description: "",
       time: "",
       date: "",
-      location: []
     }
   }
 
@@ -31,7 +30,7 @@ import reportService from "./../lib/report-service"
   handleFormSubmit = event => {
     event.preventDefault();
     const {_id, role, motivation, type, space, description, time, date, location} = this.state;
-    reportService.updateReport(_id, { role, motivation, type, space, description, time, date, location});
+    reportService.updateReport(_id, {role, motivation, type, space, description, time, date, location});
     this.props.history.push("/account")
   };
 
@@ -52,7 +51,8 @@ import reportService from "./../lib/report-service"
     
                 <div className="form-item">
                   <label>You were the: </label>
-                  <select type="text"
+                  <select 
+                    type="text"
                     name="role"
                     value={role}
                     onChange={this.handleChange}>

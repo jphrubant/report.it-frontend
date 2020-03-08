@@ -7,7 +7,6 @@ class EditAccount extends Component {
   constructor(props){
     super(props)
     this.state = {
-      id : '',
       email: '',
       dateOfBirth: '',
       sex: '',
