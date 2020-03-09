@@ -42,11 +42,12 @@ handleChange = event => {
 render() {
   const { email, dateOfBirth, sex, sexualOrientation, ethnicity, nationality } = this.state;
   return (
-   <div className="account-div">
+   <div className="edit-account-div">
     <h1>Edit Information</h1>
     <p>Only fields marked with a * are mandatory</p>
     <form onSubmit={this.handleFormSubmit}>
       <hr></hr>
+      <div></div>
       <div>
         <div className="form-item">
           <label>email:*</label>

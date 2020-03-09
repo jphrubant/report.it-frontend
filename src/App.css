@@ -19,7 +19,14 @@ h1{
 textarea{
   border: 1px solid #353C4C;
   font-size: 18px;
+  margin-top: 5px;
 }
+
+.textarea-label{
+  padding-bottom: 15px;
+}
+
+
 
 /* ---NAV BAR--- */
 
@@ -49,6 +56,10 @@ textarea{
   color: #353C4C;
   font-weight: bold;
   border: none
+}
+
+.navbar-button:hover {
+  text-decoration: underline;
 }
 
 .button-div{
@@ -130,6 +141,10 @@ select{
   border: 1px solid #353C4C;
 }
 
+.submit-button:hover {
+  text-decoration: underline;
+}
+
 .date-input{
   width: 153px;
 }
@@ -137,6 +152,13 @@ select{
 /* ---ACCOUNT--- */
 
 .account-div{
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-account-div{
   padding: 0 20px 20px 20px;
   display: flex;
   flex-direction: column;
@@ -167,6 +189,10 @@ select{
   border: 1px solid #353C4C;
   color: #353C4C;
   font-weight: bold;
+}
+
+.edit-button:hover {
+  text-decoration: underline;
 }
 
 /* ---REPORTS--- */
@@ -205,5 +231,34 @@ select{
   border: none;
 }
 
+.popup-button:hover {
+  text-decoration: underline;
+}
+
+
+@media only screen and (min-width: 800px) {
+  .account-div{
+    padding: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+  }
+
+  .my-account-info{
+    order: -1;
+  }
+
+  .update-report-div{
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .update-report-form{
+    margin: 0 50px;
+  }
+
+}
 
 

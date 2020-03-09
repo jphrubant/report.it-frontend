@@ -50,8 +50,9 @@ class Account extends Component {
   render() {
     return (
       <div className="account-div">
-        <h1>My reports</h1>
+        
           <div>
+          <h1>My reports</h1>
             <hr></hr>
             {this.state.reports.map(oneReport => {
               return (
@@ -68,8 +69,9 @@ class Account extends Component {
               </div>)
             })}
           </div>
+          
+          <div className="my-account-info">
           <h1>Account info</h1>
-          <div>
             <div className="account-section">
               <hr></hr>
               <ul>
