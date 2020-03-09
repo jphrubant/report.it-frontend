@@ -4,8 +4,6 @@ import ReactMapGL, {Marker, Popup} from 'react-map-gl';
 import reportService from './../lib/report-service'
 import { withAuth } from "./../lib/Auth";
 
-const MAPBOX_TOKEN = "pk.eyJ1IjoianBocnViYW50IiwiYSI6ImNrN2V6MDgxYzEyY3AzZnBhOThhYmdreDIifQ.mefIMl5Hx9X-_5zopU7kNQ" // Set your mapbox token here
-
 class Map extends Component {
   constructor(props) {
     super(props);
@@ -63,7 +61,7 @@ class Map extends Component {
           height="100vh"
           mapStyle="mapbox://styles/jphrubant/ck7f0leta2c9x1ir08h3vzq3f"
           onViewportChange={viewport => this.setState({viewport})}
-          mapboxApiAccessToken={MAPBOX_TOKEN}
+          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
           onClick={this.mapClick}
         >
         
