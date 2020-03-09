@@ -54,9 +54,10 @@ class Account extends Component {
           <div>
           <h1>My reports</h1>
             <hr></hr>
-            {this.state.reports.map(oneReport => {
-              return (
-              <div key={oneReport._id} className="report-item">
+
+            {
+              this.state.reports.map(oneReport => {
+              return (<div key={oneReport._id} className="report-item">
                 <div className="incident">
                   <p > {oneReport.motivation} incident</p> 
                 </div>
@@ -66,8 +67,9 @@ class Account extends Component {
                   </Link>
                   <button className="edit-button" onClick={this.handleDeleteReport.bind(this, oneReport._id)}>Delete</button>
                 </div>
-              </div>)
-            })}
+              </div>)})
+            }
+            
           </div>
           
           <div className="my-account-info">

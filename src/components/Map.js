@@ -24,6 +24,17 @@ class Map extends Component {
     };
   };
 
+  // componentDidUpdate () {
+  //   reportService
+  //     .allReports()
+  //     .then(allReps => {
+  //       this.setState({allReports: allReps})
+  //     })
+  //     .catch(err => {
+  //       console.log(err)
+  //     });
+  // }
+
   componentDidMount () {
     reportService
       .allReports()
@@ -70,7 +81,9 @@ class Map extends Component {
         {this.state.allReports.map(oneReport => {
             return (
               <Marker key={oneReport._id} longitude={oneReport.location[0]} latitude={oneReport.location[1]}>
-                <img className="pin" src="./pin.png" alt="pin" />
+                <Link to={`/one-report-information/${oneReport._id}`}>
+                  <img className="pin" src="./pin.png" alt="pin" />
+                </Link>
               </Marker>
             );
           })

@@ -57,7 +57,7 @@ class CreateReport extends Component {
             <div className="update-report-div">
               <div className="update-report-form">
                 <div className="form-item">
-                  <label>You were the: </label>
+                  <label>Role: </label>
                   <select type="text"
                     name="role"
                     value={role}
@@ -69,7 +69,7 @@ class CreateReport extends Component {
                 </div>
 
                 <div className="form-item">
-                  <label>Motivation: </label>
+                  <label>Motive: </label>
                   <select type="text"
                     name="motivation"
                     value={motivation}
