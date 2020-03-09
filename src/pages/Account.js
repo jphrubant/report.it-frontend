@@ -7,6 +7,7 @@ import userService from "../lib/user-service"
 
 class Account extends Component {
   state = {
+    _id: '',
     email: '',
     dateOfBirth: '',
     sex: '',
@@ -18,6 +19,7 @@ class Account extends Component {
 
   componentDidMount(){
     this.getUserData()
+    console.log('PRPOPOPPSPPSPPS', this.props)
   }
 
   getUserData = () => {
@@ -36,17 +38,9 @@ class Account extends Component {
   }
 
   handleAccountDelete = ( ) => {
-    const user = this.state._id
-    userService.userDelete(user)
-
-    const reports = this.state.reports._id
-    console.log('REPORT' , reports)
-    // reports.forEach((oneReport) => {
-      
-    //   reportService.deleteReport(oneReport._id)
-    // })
-
-    this.props.history.goBack()
+    const user = this.state._id;
+    userService.userDelete(user);
+    this.props.history.go("/");
   }
 
   render() {
