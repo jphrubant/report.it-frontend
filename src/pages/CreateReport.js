@@ -3,6 +3,7 @@ import { withAuth } from "../lib/Auth";
 import reportService from './../lib/report-service';
 import authService from './../lib/auth-service';
 import queryString from 'query-string';
+import { Redirect } from "react-router-dom";
 
 class CreateReport extends Component {
   constructor(props){
@@ -37,7 +38,7 @@ class CreateReport extends Component {
     const {role, motivation, type, space, description, time, date, location} = this.state;
     const user = this.props.user._id;
     reportService.createReport(role, motivation, type, space, description, time, date, location, user);
-    this.props.history.push("/")
+    this.props.history.goBack()
   };
 
   handleChange = event => {

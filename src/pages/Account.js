@@ -16,17 +16,11 @@ class Account extends Component {
     reports: []
   }
 
-  componentDidUpdate(){
-    authService.me()
-    .then((data) => {
-    this.setState({...data})
-    })
-    .catch(err => {
-    console.log(err)
-    })
+  componentDidMount(){
+    this.getUserData()
   }
 
-  componentDidMount(){
+  getUserData = () => {
     authService.me()
     .then((data) => {
         this.setState({...data})
@@ -38,13 +32,21 @@ class Account extends Component {
 
   handleDeleteReport = reportId => {  
     reportService.deleteReport(reportId)
+    this.getUserData()
   }
 
   handleAccountDelete = ( ) => {
     const user = this.state._id
     userService.userDelete(user)
-    // reportService.deleteReport(this.state.reports)
-    this.props.history.push("/")
+
+    const reports = this.state.reports._id
+    console.log('REPORT' , reports)
+    // reports.forEach((oneReport) => {
+      
+    //   reportService.deleteReport(oneReport._id)
+    // })
+
+    this.props.history.goBack()
   }
 
   render() {

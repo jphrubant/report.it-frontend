@@ -17,7 +17,7 @@ class Report {
   // GET ONE REPORT BY ID //
   oneReport(id){
     return this.report
-      .get(`report/${id}`, {})
+      .get(`/report/${id}`, {})
       .then(({data}) => data);
   };
     
@@ -31,17 +31,18 @@ class Report {
     // UPDATE A REPORT //
   updateReport(id, role, motivation, type, space, description, time, date, location){
     return this.report
-      .put(`report/${id}`, {role, motivation, type, space, description, time, date, location})
+      .put(`/report/${id}`, {role, motivation, type, space, description, time, date, location})
       .then(({data}) => data);
   };
 
     // DELETE A REPORT //
   deleteReport(id){
     return this.report
-      .delete(`report/${id}`)
+      .delete(`/report/${id}`)
       .then(({data}) => data);
   };
-}
+
+};
 
 const reportService = new Report();
 export default reportService;

@@ -24,17 +24,6 @@ class Map extends Component {
     };
   };
 
-  // componentDidUpdate () {
-  //   reportService
-  //     .allReports()
-  //     .then(allReps => {
-  //       this.setState({allReports: allReps})
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     });
-  // }
-
   componentDidMount () {
     reportService
       .allReports()
