@@ -20,6 +20,10 @@ h1{
   text-align: center;
 }
 
+h3{
+  margin: 0;
+}
+
 textarea{
   border: 1px solid #353C4C;
   font-size: 18px;
@@ -202,10 +206,11 @@ select{
 /* ---REPORTS--- */
 
 .report-div{
-  padding: 0 20px 20px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 10px;
+  font-size: 14px;
+  background-color: floralwhite;
+  border-radius: 3%;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 /* ---MAP--- */
@@ -246,6 +251,12 @@ select{
   position: fixed; 
   bottom: 0;
   right: 0
+}
+
+.pin-button{
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 .popup-button{

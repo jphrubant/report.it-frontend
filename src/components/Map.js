@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ReactMapGL, {Marker, Popup} from 'react-map-gl';
 import reportService from './../lib/report-service'
 import { withAuth } from "./../lib/Auth";
+import OneReportInfo from "../pages/OneReportInfo"
 
 class Map extends Component {
   constructor(props) {
@@ -18,13 +19,20 @@ class Map extends Component {
       pinVisible: false,
       newPin: null, // <---- array of coordinates
       allReports: [],
-      filter: ["all"]
+      filter: ["all"],
+      toggleReport: false
     };
   };
 
   componentDidMount () {
     this.updateReports()
   };
+
+  showReport = () => {
+    console.log('Hello from SHOWREPORT')
+    this.toggleReport = true
+    console.log('toggleReport', this.toggleReport)
+  }
 
   updateReports = () => {
     reportService
@@ -45,7 +53,6 @@ class Map extends Component {
   handleFilterChange = event => {
     const { value } = event.target;
     this.setState({ filter : value });
-    console.log('FILTER' , this.state.filter)
   };
 
   render() {
@@ -64,26 +71,16 @@ class Map extends Component {
         
         {(this.state.filter.includes("all")) 
         ? (this.state.allReports.map(oneReport => {
-            return (
-              <Marker key={oneReport._id} longitude={oneReport.location[0]} latitude={oneReport.location[1]}>
-                <Link to={`/one-report-information/${oneReport._id}`}>
-                  <img className="pin" src="./pin.png" alt="pin" />
-                </Link>
-              </Marker>
-            );
-          })
-        ) : (this.state.allReports.filter((oneReport)=>{
+            return (<OneReportInfo reportId={oneReport._id} oneReport={oneReport} />)  
+        })
+        ) : (this.state.allReports.filter((oneReport) => {
              return oneReport.motivation === this.state.filter
-             }).map(oneReport => {
-              return (
-                <Marker key={oneReport._id} longitude={oneReport.location[0]} latitude={oneReport.location[1]}>
-                  <Link to={`/one-report-information/${oneReport._id}`}>
-                    <img className="pin" src="./pin.png" alt="pin" />
-                  </Link>
-                </Marker>
-                )
-              })
-            )}
+             })
+             .map(oneReport => {
+              return(<OneReportInfo reportId={oneReport._id} oneReport={oneReport} />)
+            })
+        )
+        }
       
         {(this.state.newPin && this.state.pinVisible) 
           ? (<Popup

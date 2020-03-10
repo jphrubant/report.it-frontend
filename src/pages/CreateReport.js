@@ -3,7 +3,6 @@ import { withAuth } from "../lib/Auth";
 import reportService from './../lib/report-service';
 import authService from './../lib/auth-service';
 import queryString from 'query-string';
-import { Redirect } from "react-router-dom";
 
 class CreateReport extends Component {
   constructor(props){
