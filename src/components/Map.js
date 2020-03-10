@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
-import ReactMapGL, {Marker, Popup} from 'react-map-gl';
+import ReactMapGL, {Popup} from 'react-map-gl';
 import reportService from './../lib/report-service'
 import { withAuth } from "./../lib/Auth";
 import OneReportInfo from "../pages/OneReportInfo"
@@ -20,19 +20,13 @@ class Map extends Component {
       newPin: null, // <---- array of coordinates
       allReports: [],
       filter: ["all"],
-      toggleReport: false
+      
     };
   };
 
   componentDidMount () {
     this.updateReports()
   };
-
-  showReport = () => {
-    console.log('Hello from SHOWREPORT')
-    this.toggleReport = true
-    console.log('toggleReport', this.toggleReport)
-  }
 
   updateReports = () => {
     reportService
@@ -43,7 +37,7 @@ class Map extends Component {
       .catch(err => {
         console.log(err)
       });
-   }
+  };
 
   mapClick = (event) => {
     const pinVisible = !this.state.pinVisible;
@@ -71,13 +65,13 @@ class Map extends Component {
         
         {(this.state.filter.includes("all")) 
         ? (this.state.allReports.map(oneReport => {
-            return (<OneReportInfo reportId={oneReport._id} oneReport={oneReport} />)  
+            return (<OneReportInfo key={oneReport._id}  reportId={oneReport._id} oneReport={oneReport} />)  
         })
         ) : (this.state.allReports.filter((oneReport) => {
              return oneReport.motivation === this.state.filter
              })
              .map(oneReport => {
-              return(<OneReportInfo reportId={oneReport._id} oneReport={oneReport} />)
+              return(<OneReportInfo key={oneReport._id} reportId={oneReport._id} oneReport={oneReport} />)
             })
         )
         }
@@ -105,7 +99,7 @@ class Map extends Component {
                 <p className="map-instruction">Click the map to report</p>
               </div>
               
-              <form classname="filter-form"> 
+              <form className="filter-form"> 
                 <select 
                   type="text"
                   name="filter"

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { withAuth } from "../lib/Auth";
 import reportService from "../lib/report-service";
-import { Link } from "react-router-dom";
-import ReactMapGL, {Marker} from 'react-map-gl';
+import authService from './../lib/auth-service'
+import {Marker} from 'react-map-gl';
 
 class OneReportInfo extends Component {
   constructor(props){ 
@@ -15,14 +15,12 @@ class OneReportInfo extends Component {
       description: "",
       time: "",
       date: "",
-      toggleReport: false
+      showReport: false
     }
   }
 
   showReport = () => {
-    this.state.toggleReport === false 
-    ? this.setState({toggleReport: true}) 
-    : this.setState({toggleReport: false})
+    this.setState({showReport: !this.state.showReport})
   }
 
   componentDidMount () {
@@ -39,12 +37,15 @@ class OneReportInfo extends Component {
   render() { 
     return (
       <div>
-      <Marker key={this.props.oneReport._id} longitude={this.props.oneReport.location[0]} latitude={this.props.oneReport.location[1]}>
-        <button className="pin-button" onClick={this.showReport}><img className="pin" src="./pin.png" alt="pin" /></button>
-          {this.state.toggleReport 
+      <Marker 
+        key={this.props.oneReport._id} 
+        longitude={this.props.oneReport.location[0]} 
+        latitude={this.props.oneReport.location[1]}>
+          <button className="pin-button" onClick={this.showReport}> <img className="pin" src="./pin.png" alt="pin" /></button>
+          {this.state.showReport 
           ?
-          <div className="report-div">
-            <h3>Report information</h3>
+          <div className="one-report-div">
+            <h3>Report details</h3>
             <hr></hr>
             <p>Motive: {this.state.motivation}</p>
             <p>Type: {this.state.type}</p>
@@ -54,8 +55,7 @@ class OneReportInfo extends Component {
             <p>Description: {this.state.description}</p>
           </div>
             :
-            null
-          }
+          null}
         </Marker>
       </div>
     )
