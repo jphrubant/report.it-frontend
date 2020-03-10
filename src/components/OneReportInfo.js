@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withAuth } from "../lib/Auth";
 import reportService from "../lib/report-service";
-import authService from './../lib/auth-service'
 import {Marker} from 'react-map-gl';
 
 class OneReportInfo extends Component {
@@ -20,6 +19,7 @@ class OneReportInfo extends Component {
   }
 
   showReport = () => {
+    
     this.setState({showReport: !this.state.showReport})
   }
 

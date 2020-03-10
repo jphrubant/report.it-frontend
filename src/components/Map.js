@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ReactMapGL, {Popup} from 'react-map-gl';
 import reportService from './../lib/report-service'
 import { withAuth } from "./../lib/Auth";
-import OneReportInfo from "../pages/OneReportInfo"
+import OneReportInfo from "../components/OneReportInfo"
 
 class Map extends Component {
   constructor(props) {
@@ -19,8 +19,8 @@ class Map extends Component {
       pinVisible: false,
       newPin: null, // <---- array of coordinates
       allReports: [],
-      filter: ["all"],
-      
+      filter: [],
+      value: ""
     };
   };
 
@@ -63,7 +63,7 @@ class Map extends Component {
           onClick={this.mapClick}
         >
         
-        {(this.state.filter.includes("all")) 
+        {(this.state.filter.length === 0) 
         ? (this.state.allReports.map(oneReport => {
             return (<OneReportInfo key={oneReport._id}  reportId={oneReport._id} oneReport={oneReport} />)  
         })
@@ -104,7 +104,7 @@ class Map extends Component {
                   type="text"
                   name="filter"
                   className="map-filter"
-                  value={this.state.filter}
+                  value={this.state.value}
                   onChange={this.handleFilterChange}>
                     <option value="all"> - Filter - </option>
                     <option value="Sexist">Sexist</option>
@@ -116,7 +116,6 @@ class Map extends Component {
                     <option value="Other">Other</option>
                 </select>
               </form>
-    
         </ReactMapGL>
       </div>
     );

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withAuth } from "../lib/Auth";
-import reportService from './../lib/report-service';
-import authService from './../lib/auth-service';
+import reportService from '../lib/report-service';
+import authService from '../lib/auth-service';
 import queryString from 'query-string';
 
 class CreateReport extends Component {
@@ -132,21 +132,19 @@ class CreateReport extends Component {
 
                 </div>
                 <div className="update-report-form">
-
-                <div className="form-item">
-                  <label>Description: </label><br/>
-                    <textarea
-                      rows="5" 
-                      cols="30"
-                      name="description"
-                      value={description}
-                      onChange={this.handleChange}
-                    />
-                </div>
-
-                <div className="submit-button-div">
-                  <button className="submit-button" type="submit">Submit Report</button>
-                </div>
+                  <div className="form-item">
+                    <label>Description: </label><br/>
+                      <textarea
+                        rows="5" 
+                        cols="30"
+                        name="description"
+                        value={description}
+                        onChange={this.handleChange}
+                      />
+                  </div>
+                  <div className="submit-button-div">
+                    <button className="submit-button" type="submit">Submit Report</button>
+                  </div>
                 </div>
               </div>
             </div>
