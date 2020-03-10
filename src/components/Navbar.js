@@ -16,7 +16,7 @@ class Navbar extends Component {
                 <Link to='/account'>
                   <button className="navbar-button">My Account</button>
                 </Link>
-                <button className="navbar-button" onClick={logout}>Logout</button>
+                <button className="navbar-button" onClick={logout}>Log out</button>
               </div>
           </div>
         ) : (
@@ -24,7 +24,7 @@ class Navbar extends Component {
             <div className="nav-div">
               <div className="button-div">
                 <Link to="/login">
-                  <button className="navbar-button">Login</button>
+                  <button className="navbar-button">Log in</button>
                 </Link>
                 <Link to="/signup">
                   <button className="navbar-button">Sign Up</button>

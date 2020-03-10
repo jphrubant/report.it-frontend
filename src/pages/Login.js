@@ -52,7 +52,7 @@ class Login extends Component {
           </div>
 
         </form>
-        <p>Don't have an account yet? <Link to={"/signup"}>Signup!</Link></p>
+        <p>Don't have an account yet? <Link to={"/signup"}>Sign up!</Link></p>
       </div>
     );
   }
