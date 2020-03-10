@@ -19,7 +19,6 @@ class Account extends Component {
 
   componentDidMount(){
     this.getUserData()
-    console.log('PRPOPOPPSPPSPPS', this.props)
   }
 
   getUserData = () => {

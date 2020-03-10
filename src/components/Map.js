@@ -18,38 +18,35 @@ class Map extends Component {
       pinVisible: false,
       newPin: null, // <---- array of coordinates
       allReports: [],
-      // filter: ''
+      filter: ["all"]
     };
   };
 
   componentDidMount () {
+    this.updateReports()
+  };
+
+  updateReports = () => {
     reportService
       .allReports()
-      .then(allReps => {
+      .then(allReps => { 
         this.setState({allReports: allReps})
       })
       .catch(err => {
         console.log(err)
       });
-  };
+   }
 
   mapClick = (event) => {
     const pinVisible = !this.state.pinVisible;
     this.setState({newPin: event.lngLat, pinVisible})
   };
 
-  // handleFilterChange = event => {
-  //   const { value } = event.target;
-  //   this.setState({ filter : value });
-  //   console.log('FILTER', this.state)
-  // };
-
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   const { value } = event.target;
-  //   this.setState({ filter : value });
-  //   console.log('FILTER', this.state)
-  // };
+  handleFilterChange = event => {
+    const { value } = event.target;
+    this.setState({ filter : value });
+    console.log('FILTER' , this.state.filter)
+  };
 
   render() {
     const {isLoggedIn} = this.props;
@@ -65,7 +62,8 @@ class Map extends Component {
           onClick={this.mapClick}
         >
         
-        {this.state.allReports.map(oneReport => {
+        {(this.state.filter.includes("all")) 
+        ? (this.state.allReports.map(oneReport => {
             return (
               <Marker key={oneReport._id} longitude={oneReport.location[0]} latitude={oneReport.location[1]}>
                 <Link to={`/one-report-information/${oneReport._id}`}>
@@ -74,7 +72,18 @@ class Map extends Component {
               </Marker>
             );
           })
-        }
+        ) : (this.state.allReports.filter((oneReport)=>{
+             return oneReport.motivation === this.state.filter
+             }).map(oneReport => {
+              return (
+                <Marker key={oneReport._id} longitude={oneReport.location[0]} latitude={oneReport.location[1]}>
+                  <Link to={`/one-report-information/${oneReport._id}`}>
+                    <img className="pin" src="./pin.png" alt="pin" />
+                  </Link>
+                </Marker>
+                )
+              })
+            )}
       
         {(this.state.newPin && this.state.pinVisible) 
           ? (<Popup
@@ -94,27 +103,29 @@ class Map extends Component {
               )}
             </Popup>)
             : null }
-          <div>
-            <p className="map-instruction"> Click the map to make a report</p>
-          </div>
 
-          {/* <form onSubmit={this.handleFormSubmit}>
-            <select type="text"
-              name="filter"
-              value={''}
-              onChange={this.handleFilterChange}>
-                <option value=""> - Filter - </option>
-                <option value="Sexist">Sexist</option>
-                <option value="Racist">Racist</option>
-                <option value="Homophobic">Homophobic</option>
-                <option value="Transphobic">Transphobic</option>
-                <option value="Islamophobic">Islamophobic</option>
-                <option value="Antisemitic">Antisemitic</option>
-                <option value="Other">Other</option>
-              </select>
-              <button className="submit-button" type="submit">Filter</button>
-            </form> */}
-          
+              <div>
+                <p className="map-instruction">Click the map to report</p>
+              </div>
+              
+              <form classname="filter-form"> 
+                <select 
+                  type="text"
+                  name="filter"
+                  className="map-filter"
+                  value={this.state.filter}
+                  onChange={this.handleFilterChange}>
+                    <option value="all"> - Filter - </option>
+                    <option value="Sexist">Sexist</option>
+                    <option value="Racist">Racist</option>
+                    <option value="Homophobic">Homophobic</option>
+                    <option value="Transphobic">Transphobic</option>
+                    <option value="Islamophobic">Islamophobic</option>
+                    <option value="Antisemitic">Antisemitic</option>
+                    <option value="Other">Other</option>
+                </select>
+              </form>
+    
         </ReactMapGL>
       </div>
     );

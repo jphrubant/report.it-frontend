@@ -7,6 +7,10 @@ html, body {
   font-size: 18px;
 }
 
+.container{
+  margin-top: 50px;
+}
+
 a {
   text-decoration: none;
 }
@@ -26,8 +30,6 @@ textarea{
   padding-bottom: 15px;
 }
 
-
-
 /* ---NAV BAR--- */
 
 .navbar { 
@@ -37,6 +39,8 @@ textarea{
   color: floralwhite ;
   justify-content: space-between;
   padding-bottom: 5px;
+  position: fixed;
+  top: 0;
 }
 
 .nav-div{
@@ -209,18 +213,39 @@ select{
   height: 30px
 }
 
+.bottom-map-div{
+  display: flex;
+  align-self: flex-end;
+}
+
 .map-instruction{
   font-size: 15px;
   font-weight: bold;
   background-color: floralwhite;
-  width: 240px;
+  width: 180px;
   padding: 5px;
-  margin: 5px;
+  margin: 10px;
   border: 1px floralwhite  solid;
   border-radius: 3%;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   position: fixed; 
-  bottom:0%;
+  bottom: 0;
+  
+}
+
+.map-filter{
+  margin: 10px;
+  height: 31px;
+  width: 120px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: floralwhite;
+  border-style: none;
+  border-radius: 3%;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  position: fixed; 
+  bottom: 0;
+  right: 0
 }
 
 .popup-button{
