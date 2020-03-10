@@ -130,8 +130,6 @@ import reportService from "./../lib/report-service"
                   <div className="form-item">
                   <label>Description: </label><br/>
                     <textarea
-                      rows="5" 
-                      cols="30"
                       name="description"
                       value={description}
                       onChange={this.handleChange}

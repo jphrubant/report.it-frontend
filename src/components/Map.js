@@ -19,7 +19,7 @@ class Map extends Component {
       pinVisible: false,
       newPin: null, // <---- array of coordinates
       allReports: [],
-      filter: [],
+      filter: ['all'],
       value: ""
     };
   };
@@ -60,10 +60,9 @@ class Map extends Component {
           mapStyle="mapbox://styles/jphrubant/ck7f0leta2c9x1ir08h3vzq3f"
           onViewportChange={viewport => this.setState({viewport})}
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX}
-          onClick={this.mapClick}
-        >
+          onClick={this.mapClick}>
         
-        {(this.state.filter.length === 0) 
+        {(this.state.filter.includes('all')) 
         ? (this.state.allReports.map(oneReport => {
             return (<OneReportInfo key={oneReport._id}  reportId={oneReport._id} oneReport={oneReport} />)  
         })
@@ -73,7 +72,7 @@ class Map extends Component {
              .map(oneReport => {
               return(<OneReportInfo key={oneReport._id} reportId={oneReport._id} oneReport={oneReport} />)
             })
-        )
+          )
         }
       
         {(this.state.newPin && this.state.pinVisible) 
@@ -98,13 +97,13 @@ class Map extends Component {
               <div>
                 <p className="map-instruction">Click the map to report</p>
               </div>
-              
+             
               <form className="filter-form"> 
                 <select 
                   type="text"
                   name="filter"
                   className="map-filter"
-                  value={this.state.value}
+                  value={this.state.filter}
                   onChange={this.handleFilterChange}>
                     <option value="all"> - Filter - </option>
                     <option value="Sexist">Sexist</option>

@@ -19,9 +19,11 @@ class OneReportInfo extends Component {
   }
 
   showReport = () => {
-    
-    this.setState({showReport: !this.state.showReport})
-  }
+    this.setState({showReport: !this.state.showReport})}
+
+  hideReport = () => {
+    this.setState({showReport: !this.state.showReport})}
+
 
   componentDidMount () {
     const reportId = this.props.reportId
@@ -41,7 +43,7 @@ class OneReportInfo extends Component {
         key={this.props.oneReport._id} 
         longitude={this.props.oneReport.location[0]} 
         latitude={this.props.oneReport.location[1]}>
-          <button className="pin-button" onClick={this.showReport}> <img className="pin" src="./pin.png" alt="pin" /></button>
+          <button className="pin-button" onMouseEnter={this.showReport} onMouseLeave={this.showReport}> <img className="pin" src="./pin.png" alt="pin" /></button>
           {this.state.showReport 
           ?
           <div className="one-report-div">
