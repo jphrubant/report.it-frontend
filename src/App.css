@@ -24,6 +24,11 @@ h3{
   margin: 0;
 }
 
+span{
+  color: red;
+  font-weight: bold;
+}
+
 textarea{
   font-family: 'IBM Plex Sans', sans-serif;
   border: 1px solid #353C4C;
@@ -228,6 +233,11 @@ select{
   background-color: floralwhite;
   border-radius: 3%;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.one-report-description{
+  margin-top: 0;
+  line-height: 1.5;
 }
 
 /* ---MAP--- */

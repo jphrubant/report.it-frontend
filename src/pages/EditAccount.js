@@ -52,7 +52,7 @@ render() {
       <div></div>
       <div>
         <div className="form-item">
-          <label>email:*</label>
+          <label>email:<span>*</span></label>
           <input
             type="text"
             name="email"

@@ -50,7 +50,8 @@ class OneReportInfo extends Component {
             <p>Space: {this.state.space}</p>
             <p>Time: {this.state.time}</p>
             <p>Date: {this.state.date}</p>
-            <p>Description: {this.state.description}</p>
+            <p>Description:</p>
+            <p className="one-report-description">{this.state.description}</p>
           </div>
             :
           null}

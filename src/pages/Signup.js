@@ -34,7 +34,7 @@ class Signup extends Component {
         <p>Only fields marked with a <span>*</span> are mandatory</p>
           <div>
             <div className="form-item">
-              <label>email:*</label>
+              <label>email:<span>*</span></label>
               <input
                 className="email-input"
                 type="text"
@@ -45,7 +45,7 @@ class Signup extends Component {
               </div>
 
               <div className="form-item">
-              <label>Password:*</label>
+              <label>Password:<span>*</span></label>
               <input
                 type="password"
                 name="password"
