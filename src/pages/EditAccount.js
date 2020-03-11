@@ -46,7 +46,7 @@ render() {
   return (
    <div className="edit-account-div">
     <h1>Edit Information</h1>
-    <p>Only fields marked with a * are mandatory</p>
+    <p>Only fields marked with a <span>*</span> are mandatory</p>
     <form onSubmit={this.handleFormSubmit}>
       <hr></hr>
       <div></div>

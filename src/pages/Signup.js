@@ -31,7 +31,7 @@ class Signup extends Component {
         <h1>Create an Account</h1>
         <form onSubmit={this.handleFormSubmit}>
         <hr></hr>
-        <p>Only fields marked with a * are mandatory</p>
+        <p>Only fields marked with a <span>*</span> are mandatory</p>
           <div>
             <div className="form-item">
               <label>email:*</label>

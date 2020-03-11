@@ -21,10 +21,6 @@ class OneReportInfo extends Component {
   showReport = () => {
     this.setState({showReport: !this.state.showReport})}
 
-  hideReport = () => {
-    this.setState({showReport: !this.state.showReport})}
-
-
   componentDidMount () {
     const reportId = this.props.reportId
     reportService.oneReport(reportId)
