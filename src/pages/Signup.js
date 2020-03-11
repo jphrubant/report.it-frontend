@@ -84,7 +84,7 @@ class Signup extends Component {
               </div>
 
               <div className="form-item">
-              <label>Sexual Orientation:</label>
+              <label>Orientation:</label>
               <select 
                 className="select-input"
                 type="text"

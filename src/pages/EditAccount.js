@@ -89,7 +89,7 @@ render() {
         </div>
     
         <div className="form-item">
-          <label>Sexual Orientation:</label>
+          <label>Orientation:</label>
           <select type="text"
             name="sexualOrientation"
             value={sexualOrientation}

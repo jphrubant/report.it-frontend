@@ -133,7 +133,7 @@ class CreateReport extends Component {
                 </div>
                 <div className="update-report-form">
                   <div className="form-item">
-                    <label>Description: </label><br/>
+                    <label>Description: </label>
                       <textarea
                         name="description"
                         value={description}
