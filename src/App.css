@@ -92,8 +92,8 @@ textarea{
   font-size: 30px;
   font-weight: bold;
   color: floralwhite ;
-  padding-left: 30px;
-  padding-top: 2px;
+  padding-left: 15px;
+  padding-top: 1px;
   margin: 0;
   text-decoration: underline;
 }
@@ -233,7 +233,7 @@ select{
   font-size: 12px;
   line-height: 0.8;
   background-color: floralwhite;
-  border-radius: 3%;
+  border-radius: 1%;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
