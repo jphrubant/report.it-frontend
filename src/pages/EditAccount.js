@@ -31,9 +31,7 @@ handleFormSubmit = event => {
   const { email, dateOfBirth, sex, sexualOrientation, ethnicity, nationality } = this.state;
   const id = this.props.user._id;
   userService.userEdit(id, email, dateOfBirth, sex, sexualOrientation, ethnicity, nationality);
-  console.log('HISTORY', this.props)
   this.props.history.push("/account")
-  
 };
 
 handleChange = event => {
